@@ -1,0 +1,2604 @@
+
+------ testing: example/example.got.0-swap.obf ------
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+
+--- ltrace output ---
+memcmp(0x7fff0b426149, 0x7fff0b426146, 3, 0x7fff0b426146) = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+memcmp(0x7fff0b426149, 0x7fff0b426146, 3, 0x7fff0b426146) = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.0-swap.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffe37f054f9, 0x7ffe37f054f6, 3, 0x7ffe37f054f6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffe37f054f9, 0x7ffe37f054f6, 3, 0x7ffe37f054f6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.1-copy.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffcdfcedd89, 0x7ffcdfcedd86, 3, 0x7ffcdfcedd86) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffcdfcedd89, 0x7ffcdfcedd86, 3, 0x7ffcdfcedd86) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.1-copy.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffd3dd3c9e9, 0x7ffd3dd3c9e6, 3, 0x7ffd3dd3c9e6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffd3dd3c9e9, 0x7ffd3dd3c9e6, 3, 0x7ffd3dd3c9e6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-got.0-swap.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffd9c57f929, 0x7ffd9c57f926, 3, 0x7ffd9c57f926) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffd9c57f929, 0x7ffd9c57f926, 3, 0x7ffd9c57f926) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-got.0-swap.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+memcmp(0x7ffc46141449, 0x7ffc46141446, 3, 0x7ffc46141446) = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+memcmp(0x7ffc46141449, 0x7ffc46141446, 3, 0x7ffc46141446) = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-got.1-copy.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffce0320009, 0x7ffce0320006, 3, 0x7ffce0320006) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffce0320009, 0x7ffce0320006, 3, 0x7ffce0320006) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-got.1-copy.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffd8b61acc9, 0x7ffd8b61acc6, 3, 0x7ffd8b61acc6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffd8b61acc9, 0x7ffd8b61acc6, 3, 0x7ffd8b61acc6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-got.plt-push.0-swap.obf ------
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+memcmp(0x7ffdd9194f59, 0x7ffdd9194f56, 3, 0x7ffdd9194f56) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+memcmp(0x7ffdd9194f59, 0x7ffdd9194f56, 3, 0x7ffdd9194f56) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-got.plt-push.0-swap.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+
+--- ltrace output ---
+memcmp(0x7fffe43d5cf9, 0x7fffe43d5cf6, 3, 0x7fffe43d5cf6) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+memcmp(0x7fffe43d5cf9, 0x7fffe43d5cf6, 3, 0x7fffe43d5cf6) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-got.plt-push.1-copy.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffee180bd39, 0x7ffee180bd36, 3, 0x7ffee180bd36) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffee180bd39, 0x7ffee180bd36, 3, 0x7ffee180bd36) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-got.plt-push.1-copy.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffc8a69be99, 0x7ffc8a69be96, 3, 0x7ffc8a69be96) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffc8a69be99, 0x7ffc8a69be96, 3, 0x7ffc8a69be96) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-got.plt-push.rela-info.0-swap.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+
+--- ltrace output ---
+memcmp(0x7ffdf04d1db9, 0x7ffdf04d1db6, 3, 0x7ffdf04d1db6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+memcmp(0x7ffdf04d1db9, 0x7ffdf04d1db6, 3, 0x7ffdf04d1db6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-got.plt-push.rela-info.0-swap.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+memcmp(0x7fff75861e59, 0x7fff75861e56, 3, 0x7fff75861e56) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+memcmp(0x7fff75861e59, 0x7fff75861e56, 3, 0x7fff75861e56) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-got.plt-push.rela-info.1-copy.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffd48a30329, 0x7ffd48a30326, 3, 0x7ffd48a30326) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffd48a30329, 0x7ffd48a30326, 3, 0x7ffd48a30326) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffd48a30329, 0x7ffd48a30326, 3, 0x7ffd48a30326) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffd48a30329, 0x7ffd48a30326, 3, 0x7ffd48a30326) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-got.plt-push.rela-info.1-copy.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffdd45f6199, 0x7ffdd45f6196, 3, 0x7ffdd45f6196) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffdd45f6199, 0x7ffdd45f6196, 3, 0x7ffdd45f6196) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffdd45f6199, 0x7ffdd45f6196, 3, 0x7ffdd45f6196) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffdd45f6199, 0x7ffdd45f6196, 3, 0x7ffdd45f6196) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-got.plt-push.rela-info.rela-offset.0-swap.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7fff0da5d859, 0x7fff0da5d856, 3, 0x7fff0da5d856) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fff0da5d859, 0x7fff0da5d856, 3, 0x7fff0da5d856) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-got.plt-push.rela-info.rela-offset.0-swap.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+memcmp(0x7ffd6c7a76b9, 0x7ffd6c7a76b6, 3, 0x7ffd6c7a76b6) = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+memcmp(0x7ffd6c7a76b9, 0x7ffd6c7a76b6, 3, 0x7ffd6c7a76b6) = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-got.plt-push.rela-info.rela-offset.1-copy.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffdbecd5029, 0x7ffdbecd5026, 3, 0x7ffdbecd5026) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffdbecd5029, 0x7ffdbecd5026, 3, 0x7ffdbecd5026) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffdbecd5029, 0x7ffdbecd5026, 3, 0x7ffdbecd5026) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffdbecd5029, 0x7ffdbecd5026, 3, 0x7ffdbecd5026) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-got.plt-push.rela-info.rela-offset.1-copy.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7fff49ecb9b9, 0x7fff49ecb9b6, 3, 0x7fff49ecb9b6) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fff49ecb9b9, 0x7fff49ecb9b6, 3, 0x7fff49ecb9b6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fff49ecb9b9, 0x7fff49ecb9b6, 3, 0x7fff49ecb9b6) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fff49ecb9b9, 0x7fff49ecb9b6, 3, 0x7fff49ecb9b6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-got.plt-push.rela-offset.0-swap.obf ------
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+memcmp(0x7ffe9f7e7c49, 0x7ffe9f7e7c46, 3, 0x7ffe9f7e7c46) = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+memcmp(0x7ffe9f7e7c49, 0x7ffe9f7e7c46, 3, 0x7ffe9f7e7c46) = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-got.plt-push.rela-offset.0-swap.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7fff916c2919, 0x7fff916c2916, 3, 0x7fff916c2916) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fff916c2919, 0x7fff916c2916, 3, 0x7fff916c2916) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-got.plt-push.rela-offset.1-copy.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffefc3576f9, 0x7ffefc3576f6, 3, 0x7ffefc3576f6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffefc3576f9, 0x7ffefc3576f6, 3, 0x7ffefc3576f6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-got.plt-push.rela-offset.1-copy.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fffb0c21409, 0x7fffb0c21406, 3, 0x7fffb0c21406) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fffb0c21409, 0x7fffb0c21406, 3, 0x7fffb0c21406) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-got.rela-info.0-swap.obf ------
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+memcmp(0x7ffe1ac7cae9, 0x7ffe1ac7cae6, 3, 0x7ffe1ac7cae6) = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+memcmp(0x7ffe1ac7cae9, 0x7ffe1ac7cae6, 3, 0x7ffe1ac7cae6) = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-got.rela-info.0-swap.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffe4aadda89, 0x7ffe4aadda86, 3, 0x7ffe4aadda86) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffe4aadda89, 0x7ffe4aadda86, 3, 0x7ffe4aadda86) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-got.rela-info.1-copy.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffffe5e3a89, 0x7ffffe5e3a86, 3, 0x7ffffe5e3a86) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffffe5e3a89, 0x7ffffe5e3a86, 3, 0x7ffffe5e3a86) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffffe5e3a89, 0x7ffffe5e3a86, 3, 0x7ffffe5e3a86) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffffe5e3a89, 0x7ffffe5e3a86, 3, 0x7ffffe5e3a86) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-got.rela-info.1-copy.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7fff5d1304e9, 0x7fff5d1304e6, 3, 0x7fff5d1304e6) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fff5d1304e9, 0x7fff5d1304e6, 3, 0x7fff5d1304e6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fff5d1304e9, 0x7fff5d1304e6, 3, 0x7fff5d1304e6) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fff5d1304e9, 0x7fff5d1304e6, 3, 0x7fff5d1304e6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-got.rela-info.rela-offset.0-swap.obf ------
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+memcmp(0x7fff2bcb5059, 0x7fff2bcb5056, 3, 0x7fff2bcb5056) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+memcmp(0x7fff2bcb5059, 0x7fff2bcb5056, 3, 0x7fff2bcb5056) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-got.rela-info.rela-offset.0-swap.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+
+--- ltrace output ---
+memcmp(0x7ffd078a4c59, 0x7ffd078a4c56, 3, 0x7ffd078a4c56) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+memcmp(0x7ffd078a4c59, 0x7ffd078a4c56, 3, 0x7ffd078a4c56) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-got.rela-info.rela-offset.1-copy.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffdac5c6809, 0x7ffdac5c6806, 3, 0x7ffdac5c6806) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffdac5c6809, 0x7ffdac5c6806, 3, 0x7ffdac5c6806) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffdac5c6809, 0x7ffdac5c6806, 3, 0x7ffdac5c6806) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffdac5c6809, 0x7ffdac5c6806, 3, 0x7ffdac5c6806) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-got.rela-info.rela-offset.1-copy.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffd49533a49, 0x7ffd49533a46, 3, 0x7ffd49533a46) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffd49533a49, 0x7ffd49533a46, 3, 0x7ffd49533a46) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffd49533a49, 0x7ffd49533a46, 3, 0x7ffd49533a46) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffd49533a49, 0x7ffd49533a46, 3, 0x7ffd49533a46) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-got.rela-offset.0-swap.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+
+--- ltrace output ---
+memcmp(0x7ffea60b0c29, 0x7ffea60b0c26, 3, 0x7ffea60b0c26) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+memcmp(0x7ffea60b0c29, 0x7ffea60b0c26, 3, 0x7ffea60b0c26) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-got.rela-offset.0-swap.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+memcmp(0x7fff1e466759, 0x7fff1e466756, 3, 0x7fff1e466756) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+memcmp(0x7fff1e466759, 0x7fff1e466756, 3, 0x7fff1e466756) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-got.rela-offset.1-copy.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffd66946229, 0x7ffd66946226, 3, 0x7ffd66946226) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffd66946229, 0x7ffd66946226, 3, 0x7ffd66946226) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-got.rela-offset.1-copy.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffcd1a744d9, 0x7ffcd1a744d6, 3, 0x7ffcd1a744d6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffcd1a744d9, 0x7ffcd1a744d6, 3, 0x7ffcd1a744d6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-push.0-swap.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffe392ad0e9, 0x7ffe392ad0e6, 3, 0x7ffe392ad0e6) = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffe392ad0e9, 0x7ffe392ad0e6, 3, 0x7ffe392ad0e6) = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-push.0-swap.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffff9334d69, 0x7ffff9334d66, 3, 0x7ffff9334d66) = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffff9334d69, 0x7ffff9334d66, 3, 0x7ffff9334d66) = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-push.1-copy.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffc10753539, 0x7ffc10753536, 3, 0x7ffc10753536) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffc10753539, 0x7ffc10753536, 3, 0x7ffc10753536) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-push.1-copy.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffdba066a89, 0x7ffdba066a86, 3, 0x7ffdba066a86) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffdba066a89, 0x7ffdba066a86, 3, 0x7ffdba066a86) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-push.rela-info.0-swap.obf ------
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7fffae043469, 0x7fffae043466, 3, 0x7fffae043466) = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fffae043469, 0x7fffae043466, 3, 0x7fffae043466) = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-push.rela-info.0-swap.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffdd02c8a99, 0x7ffdd02c8a96, 3, 0x7ffdd02c8a96) = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffdd02c8a99, 0x7ffdd02c8a96, 3, 0x7ffdd02c8a96) = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-push.rela-info.1-copy.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7fffecb73c79, 0x7fffecb73c76, 3, 0x7fffecb73c76) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fffecb73c79, 0x7fffecb73c76, 3, 0x7fffecb73c76) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fffecb73c79, 0x7fffecb73c76, 3, 0x7fffecb73c76) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fffecb73c79, 0x7fffecb73c76, 3, 0x7fffecb73c76) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-push.rela-info.1-copy.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffed7227c09, 0x7ffed7227c06, 3, 0x7ffed7227c06) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffed7227c09, 0x7ffed7227c06, 3, 0x7ffed7227c06) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffed7227c09, 0x7ffed7227c06, 3, 0x7ffed7227c06) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffed7227c09, 0x7ffed7227c06, 3, 0x7ffed7227c06) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-push.rela-info.rela-offset.0-swap.obf ------
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+
+--- ltrace output ---
+memcmp(0x7ffe0e1173c9, 0x7ffe0e1173c6, 3, 0x7ffe0e1173c6) = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+memcmp(0x7ffe0e1173c9, 0x7ffe0e1173c6, 3, 0x7ffe0e1173c6) = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-push.rela-info.rela-offset.0-swap.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fffbb918339, 0x7fffbb918336, 3, 0x7fffbb918336) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fffbb918339, 0x7fffbb918336, 3, 0x7fffbb918336) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-push.rela-info.rela-offset.1-copy.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffe93c405d9, 0x7ffe93c405d6, 3, 0x7ffe93c405d6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffe93c405d9, 0x7ffe93c405d6, 3, 0x7ffe93c405d6) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffe93c405d9, 0x7ffe93c405d6, 3, 0x7ffe93c405d6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffe93c405d9, 0x7ffe93c405d6, 3, 0x7ffe93c405d6) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-push.rela-info.rela-offset.1-copy.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffced261c29, 0x7ffced261c26, 3, 0x7ffced261c26) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffced261c29, 0x7ffced261c26, 3, 0x7ffced261c26) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffced261c29, 0x7ffced261c26, 3, 0x7ffced261c26) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffced261c29, 0x7ffced261c26, 3, 0x7ffced261c26) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-push.rela-offset.0-swap.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fffaed05979, 0x7fffaed05976, 3, 0x7fffaed05976) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fffaed05979, 0x7fffaed05976, 3, 0x7fffaed05976) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-push.rela-offset.0-swap.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+
+--- ltrace output ---
+memcmp(0x7ffd1691eb49, 0x7ffd1691eb46, 3, 0x7ffd1691eb46) = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+memcmp(0x7ffd1691eb49, 0x7ffd1691eb46, 3, 0x7ffd1691eb46) = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-push.rela-offset.1-copy.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffd015f0609, 0x7ffd015f0606, 3, 0x7ffd015f0606) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffd015f0609, 0x7ffd015f0606, 3, 0x7ffd015f0606) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.plt-push.rela-offset.1-copy.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffdd19701e9, 0x7ffdd19701e6, 3, 0x7ffdd19701e6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffdd19701e9, 0x7ffdd19701e6, 3, 0x7ffdd19701e6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.rela-info.0-swap.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffd99e353b9, 0x7ffd99e353b6, 3, 0x7ffd99e353b6) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffd99e353b9, 0x7ffd99e353b6, 3, 0x7ffd99e353b6) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.rela-info.0-swap.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+
+--- ltrace output ---
+memcmp(0x7ffc257744e9, 0x7ffc257744e6, 3, 0x7ffc257744e6) = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+memcmp(0x7ffc257744e9, 0x7ffc257744e6, 3, 0x7ffc257744e6) = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.rela-info.1-copy.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7fff8a897e69, 0x7fff8a897e66, 3, 0x7fff8a897e66) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fff8a897e69, 0x7fff8a897e66, 3, 0x7fff8a897e66) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fff8a897e69, 0x7fff8a897e66, 3, 0x7fff8a897e66) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fff8a897e69, 0x7fff8a897e66, 3, 0x7fff8a897e66) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.rela-info.1-copy.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffc82c7d499, 0x7ffc82c7d496, 3, 0x7ffc82c7d496) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffc82c7d499, 0x7ffc82c7d496, 3, 0x7ffc82c7d496) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffc82c7d499, 0x7ffc82c7d496, 3, 0x7ffc82c7d496) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffc82c7d499, 0x7ffc82c7d496, 3, 0x7ffc82c7d496) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.rela-info.rela-offset.0-swap.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffe23bafad9, 0x7ffe23bafad6, 3, 0x7ffe23bafad6) = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffe23bafad9, 0x7ffe23bafad6, 3, 0x7ffe23bafad6) = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.rela-info.rela-offset.0-swap.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffc28ee4f69, 0x7ffc28ee4f66, 3, 0x7ffc28ee4f66) = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffc28ee4f69, 0x7ffc28ee4f66, 3, 0x7ffc28ee4f66) = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.rela-info.rela-offset.1-copy.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffc16b2c8b9, 0x7ffc16b2c8b6, 3, 0x7ffc16b2c8b6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffc16b2c8b9, 0x7ffc16b2c8b6, 3, 0x7ffc16b2c8b6) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffc16b2c8b9, 0x7ffc16b2c8b6, 3, 0x7ffc16b2c8b6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffc16b2c8b9, 0x7ffc16b2c8b6, 3, 0x7ffc16b2c8b6) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.rela-info.rela-offset.1-copy.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7fff7513de49, 0x7fff7513de46, 3, 0x7fff7513de46) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fff7513de49, 0x7fff7513de46, 3, 0x7fff7513de46) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fff7513de49, 0x7fff7513de46, 3, 0x7fff7513de46) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fff7513de49, 0x7fff7513de46, 3, 0x7fff7513de46) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.rela-offset.0-swap.obf ------
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffe5590a189, 0x7ffe5590a186, 3, 0x7ffe5590a186) = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffe5590a189, 0x7ffe5590a186, 3, 0x7ffe5590a186) = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.rela-offset.0-swap.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffd02ac5639, 0x7ffd02ac5636, 3, 0x7ffd02ac5636) = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffd02ac5639, 0x7ffd02ac5636, 3, 0x7ffd02ac5636) = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.rela-offset.1-copy.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffedd3d6799, 0x7ffedd3d6796, 3, 0x7ffedd3d6796) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffedd3d6799, 0x7ffedd3d6796, 3, 0x7ffedd3d6796) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.got.rela-offset.1-copy.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffc65304309, 0x7ffc65304306, 3, 0x7ffc65304306) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffc65304309, 0x7ffc65304306, 3, 0x7ffc65304306) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-got.0-swap.obf ------
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffff403e0f9, 0x7ffff403e0f6, 3, 0x7ffff403e0f6) = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffff403e0f9, 0x7ffff403e0f6, 3, 0x7ffff403e0f6) = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-got.0-swap.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffe56644d29, 0x7ffe56644d26, 3, 0x7ffe56644d26) = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffe56644d29, 0x7ffe56644d26, 3, 0x7ffe56644d26) = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-got.1-copy.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7fffc8d262d9, 0x7fffc8d262d6, 3, 0x7fffc8d262d6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fffc8d262d9, 0x7fffc8d262d6, 3, 0x7fffc8d262d6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-got.1-copy.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffed0e34399, 0x7ffed0e34396, 3, 0x7ffed0e34396) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffed0e34399, 0x7ffed0e34396, 3, 0x7ffed0e34396) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-got.plt-push.0-swap.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fff343c5bd9, 0x7fff343c5bd6, 3, 0x7fff343c5bd6) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fff343c5bd9, 0x7fff343c5bd6, 3, 0x7fff343c5bd6) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-got.plt-push.0-swap.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+
+--- ltrace output ---
+memcmp(0x7fffb4e68c29, 0x7fffb4e68c26, 3, 0x7fffb4e68c26) = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+memcmp(0x7fffb4e68c29, 0x7fffb4e68c26, 3, 0x7fffb4e68c26) = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-got.plt-push.1-copy.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffda2d3fcd9, 0x7ffda2d3fcd6, 3, 0x7ffda2d3fcd6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffda2d3fcd9, 0x7ffda2d3fcd6, 3, 0x7ffda2d3fcd6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-got.plt-push.1-copy.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffc1aa9d979, 0x7ffc1aa9d976, 3, 0x7ffc1aa9d976) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffc1aa9d979, 0x7ffc1aa9d976, 3, 0x7ffc1aa9d976) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-got.plt-push.rela-info.0-swap.obf ------
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+
+--- ltrace output ---
+memcmp(0x7ffe24a39759, 0x7ffe24a39756, 3, 0x7ffe24a39756) = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+memcmp(0x7ffe24a39759, 0x7ffe24a39756, 3, 0x7ffe24a39756) = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-got.plt-push.rela-info.0-swap.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fffd6154a79, 0x7fffd6154a76, 3, 0x7fffd6154a76) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fffd6154a79, 0x7fffd6154a76, 3, 0x7fffd6154a76) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-got.plt-push.rela-info.1-copy.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7fffc1824619, 0x7fffc1824616, 3, 0x7fffc1824616) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fffc1824619, 0x7fffc1824616, 3, 0x7fffc1824616) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fffc1824619, 0x7fffc1824616, 3, 0x7fffc1824616) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fffc1824619, 0x7fffc1824616, 3, 0x7fffc1824616) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-got.plt-push.rela-info.1-copy.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffcda17de89, 0x7ffcda17de86, 3, 0x7ffcda17de86) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffcda17de89, 0x7ffcda17de86, 3, 0x7ffcda17de86) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffcda17de89, 0x7ffcda17de86, 3, 0x7ffcda17de86) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffcda17de89, 0x7ffcda17de86, 3, 0x7ffcda17de86) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-got.plt-push.rela-info.rela-offset.0-swap.obf ------
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffd8f82b919, 0x7ffd8f82b916, 3, 0x7ffd8f82b916) = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffd8f82b919, 0x7ffd8f82b916, 3, 0x7ffd8f82b916) = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-got.plt-push.rela-info.rela-offset.0-swap.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffd6e3da189, 0x7ffd6e3da186, 3, 0x7ffd6e3da186) = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffd6e3da189, 0x7ffd6e3da186, 3, 0x7ffd6e3da186) = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-got.plt-push.rela-info.rela-offset.1-copy.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7fff439ca8d9, 0x7fff439ca8d6, 3, 0x7fff439ca8d6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fff439ca8d9, 0x7fff439ca8d6, 3, 0x7fff439ca8d6) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fff439ca8d9, 0x7fff439ca8d6, 3, 0x7fff439ca8d6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fff439ca8d9, 0x7fff439ca8d6, 3, 0x7fff439ca8d6) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-got.plt-push.rela-info.rela-offset.1-copy.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7fffe54e1cf9, 0x7fffe54e1cf6, 3, 0x7fffe54e1cf6) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fffe54e1cf9, 0x7fffe54e1cf6, 3, 0x7fffe54e1cf6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fffe54e1cf9, 0x7fffe54e1cf6, 3, 0x7fffe54e1cf6) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fffe54e1cf9, 0x7fffe54e1cf6, 3, 0x7fffe54e1cf6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-got.plt-push.rela-offset.0-swap.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffce083abb9, 0x7ffce083abb6, 3, 0x7ffce083abb6) = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffce083abb9, 0x7ffce083abb6, 3, 0x7ffce083abb6) = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-got.plt-push.rela-offset.0-swap.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffd5f10f0b9, 0x7ffd5f10f0b6, 3, 0x7ffd5f10f0b6) = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffd5f10f0b9, 0x7ffd5f10f0b6, 3, 0x7ffd5f10f0b6) = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-got.plt-push.rela-offset.1-copy.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffdf46c8b89, 0x7ffdf46c8b86, 3, 0x7ffdf46c8b86) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffdf46c8b89, 0x7ffdf46c8b86, 3, 0x7ffdf46c8b86) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-got.plt-push.rela-offset.1-copy.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffeb2542349, 0x7ffeb2542346, 3, 0x7ffeb2542346) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffeb2542349, 0x7ffeb2542346, 3, 0x7ffeb2542346) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-got.rela-info.0-swap.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffc7e892869, 0x7ffc7e892866, 3, 0x7ffc7e892866) = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffc7e892869, 0x7ffc7e892866, 3, 0x7ffc7e892866) = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-got.rela-info.0-swap.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7fffae7ac449, 0x7fffae7ac446, 3, 0x7fffae7ac446) = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fffae7ac449, 0x7fffae7ac446, 3, 0x7fffae7ac446) = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-got.rela-info.1-copy.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7fff76a59949, 0x7fff76a59946, 3, 0x7fff76a59946) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fff76a59949, 0x7fff76a59946, 3, 0x7fff76a59946) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fff76a59949, 0x7fff76a59946, 3, 0x7fff76a59946) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fff76a59949, 0x7fff76a59946, 3, 0x7fff76a59946) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-got.rela-info.1-copy.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffefd0f2929, 0x7ffefd0f2926, 3, 0x7ffefd0f2926) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffefd0f2929, 0x7ffefd0f2926, 3, 0x7ffefd0f2926) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffefd0f2929, 0x7ffefd0f2926, 3, 0x7ffefd0f2926) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffefd0f2929, 0x7ffefd0f2926, 3, 0x7ffefd0f2926) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-got.rela-info.rela-offset.0-swap.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffc1865bcb9, 0x7ffc1865bcb6, 3, 0x7ffc1865bcb6) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffc1865bcb9, 0x7ffc1865bcb6, 3, 0x7ffc1865bcb6) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-got.rela-info.rela-offset.0-swap.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+
+--- ltrace output ---
+memcmp(0x7ffdf15d9999, 0x7ffdf15d9996, 3, 0x7ffdf15d9996) = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+memcmp(0x7ffdf15d9999, 0x7ffdf15d9996, 3, 0x7ffdf15d9996) = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-got.rela-info.rela-offset.1-copy.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7fffdca67a19, 0x7fffdca67a16, 3, 0x7fffdca67a16) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fffdca67a19, 0x7fffdca67a16, 3, 0x7fffdca67a16) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fffdca67a19, 0x7fffdca67a16, 3, 0x7fffdca67a16) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fffdca67a19, 0x7fffdca67a16, 3, 0x7fffdca67a16) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-got.rela-info.rela-offset.1-copy.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7fff8e9804d9, 0x7fff8e9804d6, 3, 0x7fff8e9804d6) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fff8e9804d9, 0x7fff8e9804d6, 3, 0x7fff8e9804d6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fff8e9804d9, 0x7fff8e9804d6, 3, 0x7fff8e9804d6) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fff8e9804d9, 0x7fff8e9804d6, 3, 0x7fff8e9804d6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-got.rela-offset.0-swap.obf ------
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+
+--- ltrace output ---
+memcmp(0x7ffc7af23789, 0x7ffc7af23786, 3, 0x7ffc7af23786) = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+memcmp(0x7ffc7af23789, 0x7ffc7af23786, 3, 0x7ffc7af23786) = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-got.rela-offset.0-swap.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fff5c8a87e9, 0x7fff5c8a87e6, 3, 0x7fff5c8a87e6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fff5c8a87e9, 0x7fff5c8a87e6, 3, 0x7fff5c8a87e6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-got.rela-offset.1-copy.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7fff48779909, 0x7fff48779906, 3, 0x7fff48779906) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fff48779909, 0x7fff48779906, 3, 0x7fff48779906) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-got.rela-offset.1-copy.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffe31494dc9, 0x7ffe31494dc6, 3, 0x7ffe31494dc6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffe31494dc9, 0x7ffe31494dc6, 3, 0x7ffe31494dc6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-push.0-swap.obf ------
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+memcmp(0x7ffeb3bedda9, 0x7ffeb3bedda6, 3, 0x7ffeb3bedda6) = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+memcmp(0x7ffeb3bedda9, 0x7ffeb3bedda6, 3, 0x7ffeb3bedda6) = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-push.0-swap.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffe2693dcf9, 0x7ffe2693dcf6, 3, 0x7ffe2693dcf6) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffe2693dcf9, 0x7ffe2693dcf6, 3, 0x7ffe2693dcf6) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-push.1-copy.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7fffe9a88a09, 0x7fffe9a88a06, 3, 0x7fffe9a88a06) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fffe9a88a09, 0x7fffe9a88a06, 3, 0x7fffe9a88a06) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-push.1-copy.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffdf17a9be9, 0x7ffdf17a9be6, 3, 0x7ffdf17a9be6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffdf17a9be9, 0x7ffdf17a9be6, 3, 0x7ffdf17a9be6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-push.rela-info.0-swap.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffc22456049, 0x7ffc22456046, 3, 0x7ffc22456046) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffc22456049, 0x7ffc22456046, 3, 0x7ffc22456046) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-push.rela-info.0-swap.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+memcmp(0x7fff8012a959, 0x7fff8012a956, 3, 0x7fff8012a956) = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+memcmp(0x7fff8012a959, 0x7fff8012a956, 3, 0x7fff8012a956) = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-push.rela-info.1-copy.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffe82864a39, 0x7ffe82864a36, 3, 0x7ffe82864a36) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffe82864a39, 0x7ffe82864a36, 3, 0x7ffe82864a36) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffe82864a39, 0x7ffe82864a36, 3, 0x7ffe82864a36) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffe82864a39, 0x7ffe82864a36, 3, 0x7ffe82864a36) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-push.rela-info.1-copy.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffc35b72f99, 0x7ffc35b72f96, 3, 0x7ffc35b72f96) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffc35b72f99, 0x7ffc35b72f96, 3, 0x7ffc35b72f96) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffc35b72f99, 0x7ffc35b72f96, 3, 0x7ffc35b72f96) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffc35b72f99, 0x7ffc35b72f96, 3, 0x7ffc35b72f96) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-push.rela-info.rela-offset.0-swap.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+
+--- ltrace output ---
+memcmp(0x7fffe1942f09, 0x7fffe1942f06, 3, 0x7fffe1942f06) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+memcmp(0x7fffe1942f09, 0x7fffe1942f06, 3, 0x7fffe1942f06) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-push.rela-info.rela-offset.0-swap.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+memcmp(0x7ffe8ad8ece9, 0x7ffe8ad8ece6, 3, 0x7ffe8ad8ece6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+memcmp(0x7ffe8ad8ece9, 0x7ffe8ad8ece6, 3, 0x7ffe8ad8ece6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-push.rela-info.rela-offset.1-copy.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffddf92b239, 0x7ffddf92b236, 3, 0x7ffddf92b236) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffddf92b239, 0x7ffddf92b236, 3, 0x7ffddf92b236) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffddf92b239, 0x7ffddf92b236, 3, 0x7ffddf92b236) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffddf92b239, 0x7ffddf92b236, 3, 0x7ffddf92b236) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-push.rela-info.rela-offset.1-copy.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffe2c0ac939, 0x7ffe2c0ac936, 3, 0x7ffe2c0ac936) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffe2c0ac939, 0x7ffe2c0ac936, 3, 0x7ffe2c0ac936) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffe2c0ac939, 0x7ffe2c0ac936, 3, 0x7ffe2c0ac936) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffe2c0ac939, 0x7ffe2c0ac936, 3, 0x7ffe2c0ac936) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-push.rela-offset.0-swap.obf ------
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+memcmp(0x7ffd34b93e19, 0x7ffd34b93e16, 3, 0x7ffd34b93e16) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+memcmp(0x7ffd34b93e19, 0x7ffd34b93e16, 3, 0x7ffd34b93e16) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-push.rela-offset.0-swap.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+
+--- ltrace output ---
+memcmp(0x7fffa5ac2f09, 0x7fffa5ac2f06, 3, 0x7fffa5ac2f06) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+memcmp(0x7fffa5ac2f09, 0x7fffa5ac2f06, 3, 0x7fffa5ac2f06) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-push.rela-offset.1-copy.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7fff43d89019, 0x7fff43d89016, 3, 0x7fff43d89016) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fff43d89019, 0x7fff43d89016, 3, 0x7fff43d89016) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.plt-push.rela-offset.1-copy.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffe43f1da59, 0x7ffe43f1da56, 3, 0x7ffe43f1da56) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffe43f1da59, 0x7ffe43f1da56, 3, 0x7ffe43f1da56) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.rela-info.0-swap.obf ------
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+memcmp(0x7ffd2e86a9c9, 0x7ffd2e86a9c6, 3, 0x7ffd2e86a9c6) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+memcmp(0x7ffd2e86a9c9, 0x7ffd2e86a9c6, 3, 0x7ffd2e86a9c6) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.rela-info.0-swap.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+
+--- ltrace output ---
+memcmp(0x7ffe2202b7f9, 0x7ffe2202b7f6, 3, 0x7ffe2202b7f6) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+memcmp(0x7ffe2202b7f9, 0x7ffe2202b7f6, 3, 0x7ffe2202b7f6) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
++++ exited (status 0) +++
+
+------ testing: example/example.rela-info.1-copy.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7fff2241b149, 0x7fff2241b146, 3, 0x7fff2241b146) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fff2241b149, 0x7fff2241b146, 3, 0x7fff2241b146) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fff2241b149, 0x7fff2241b146, 3, 0x7fff2241b146) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fff2241b149, 0x7fff2241b146, 3, 0x7fff2241b146) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.rela-info.1-copy.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffe90e74c69, 0x7ffe90e74c66, 3, 0x7ffe90e74c66) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffe90e74c69, 0x7ffe90e74c66, 3, 0x7ffe90e74c66) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffe90e74c69, 0x7ffe90e74c66, 3, 0x7ffe90e74c66) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffe90e74c69, 0x7ffe90e74c66, 3, 0x7ffe90e74c66) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.rela-info.rela-offset.0-swap.obf ------
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+memcmp(0x7ffec16d30f9, 0x7ffec16d30f6, 3, 0x7ffec16d30f6) = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+memcmp(0x7ffec16d30f9, 0x7ffec16d30f6, 3, 0x7ffec16d30f6) = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
++++ exited (status 0) +++
+
+------ testing: example/example.rela-info.rela-offset.0-swap.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffd8eddc829, 0x7ffd8eddc826, 3, 0x7ffd8eddc826) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffd8eddc829, 0x7ffd8eddc826, 3, 0x7ffd8eddc826) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.rela-info.rela-offset.1-copy.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffceffb84b9, 0x7ffceffb84b6, 3, 0x7ffceffb84b6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffceffb84b9, 0x7ffceffb84b6, 3, 0x7ffceffb84b6) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffceffb84b9, 0x7ffceffb84b6, 3, 0x7ffceffb84b6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffceffb84b9, 0x7ffceffb84b6, 3, 0x7ffceffb84b6) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.rela-info.rela-offset.1-copy.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7ffd05867759, 0x7ffd05867756, 3, 0x7ffd05867756) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffd05867759, 0x7ffd05867756, 3, 0x7ffd05867756) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffd05867759, 0x7ffd05867756, 3, 0x7ffd05867756) = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7ffd05867759, 0x7ffd05867756, 3, 0x7ffd05867756) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.rela-offset.0-swap.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+
+--- ltrace output ---
+memcmp(0x7fffd7f6ba49, 0x7fffd7f6ba46, 3, 0x7fffd7f6ba46) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+memcmp(0x7fffd7f6ba49, 0x7fffd7f6ba46, 3, 0x7fffd7f6ba46) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 66
+printf("return value of strncmp(buf1, bu"..., 3, 0x42, "memcmp") = 76
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 42 (actual function called: memcmp)
++++ exited (status 0) +++
+
+------ testing: example/example.rela-offset.0-swap.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+memcmp(0x7fff12bfe169, 0x7fff12bfe166, 3, 0x7fff12bfe166) = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+memcmp(0x7fff12bfe169, 0x7fff12bfe166, 3, 0x7fff12bfe166) = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
++++ exited (status 0) +++
+
+------ testing: example/example.rela-offset.1-copy.obf ------
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+
+--- ltrace output ---
+memcmp(0x7fff0056e7f9, 0x7fff0056e7f6, 3, 0x7fff0056e7f6) = 66
+printf("return value of memcmp(buf1, buf"..., 3, 0x42, "memcmp") = 76
+strncmp("A", "A", 3)                             = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+memcmp(0x7fff0056e7f9, 0x7fff0056e7f6, 3, 0x7fff0056e7f6) = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+return value of memcmp(buf1, buf2, 3):  42 (actual function called: memcmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
++++ exited (status 0) +++
+
+------ testing: example/example.rela-offset.1-copy.obf  strncmp first ------
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+
+--- ltrace output ---
+strncmp("A", "A", 3)                             = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+memcmp(0x7ffe59fcf769, 0x7ffe59fcf766, 3, 0x7ffe59fcf766) = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+strncmp("A", "A", 3)                             = 0
+printf("return value of strncmp(buf1, bu"..., 3, 0, "strncmp") = 77
+memcmp(0x7ffe59fcf769, 0x7ffe59fcf766, 3, 0x7ffe59fcf766) = 0
+printf("return value of memcmp(buf1, buf"..., 3, 0, "strncmp") = 77
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
+return value of strncmp(buf1, buf2, 3): 00 (actual function called: strncmp)
+return value of memcmp(buf1, buf2, 3):  00 (actual function called: strncmp)
++++ exited (status 0) +++
